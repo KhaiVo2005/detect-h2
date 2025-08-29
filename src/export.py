@@ -24,7 +24,7 @@ def main():
     target_path = outdir / exported_path.name
     shutil.move(str(exported_path), str(target_path))
 
-    print(f"✅ Model exported to: {target_path}")
+    print(f"Model exported to: {target_path}")
 
 if __name__ == "__main__":
     main()

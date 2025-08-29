@@ -1,0 +1,39 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+
+# Virtual env
+.venv/
+env/
+venv/
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# Data & training outputs (keep folder, ignore contents)
+data/*
+!data/.gitkeep
+
+datasets/*
+!datasets/.gitkeep
+
+runs/*
+!runs/.gitkeep
+
+exports/*
+!exports/.gitkeep
+
+# Model weights & exports (ignore all heavy files)
+*.pt
+*.onnx
+*.engine
+*.tflite
+*.mlmodel
+*.pb
+
+# Logs
+*.log

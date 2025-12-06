@@ -22,31 +22,6 @@ def main():
     yaml_src = os.path.join(target_dir, "data.yaml")
     yaml_dst = os.path.join("data", "data.yaml")
     shutil.copy(yaml_src, yaml_dst)
-    
-    import os
-import shutil
-from roboflow import Roboflow
-from dotenv import load_dotenv
-
-def main():
-    load_dotenv()
-    
-    rf = Roboflow(api_key="0wcPLEtbOE65BLx9HipH")
-    project = rf.workspace("only-me-h4rdp").project("h2detect-vrdju")
-    version = project.version(5)
-    dataset = version.download("yolov8")
-    
-    downloaded_dir = dataset.location
-
-    target_dir = os.path.join("datasets", "h2detect-vrdju")
-    if os.path.exists(target_dir):
-        shutil.rmtree(target_dir)
-    shutil.move(downloaded_dir, target_dir)
-
-    os.makedirs("data", exist_ok=True)
-    yaml_src = os.path.join(target_dir, "data.yaml")
-    yaml_dst = os.path.join("data", "data.yaml")
-    shutil.copy(yaml_src, yaml_dst)
 
     with open(yaml_dst, "r", encoding="utf-8") as f:
         lines = f.readlines()
